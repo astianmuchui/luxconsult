@@ -227,7 +227,7 @@ html {
 .btn-transparent-primary {
   background-color: transparent;
   color: #1e1e1f;
-  border: 2px solid #1e1e1f;
+  border: 1.5px solid #1e1e1f;
   padding: 10px 20px;
   cursor: pointer;
   transition: all 1s ease-in-out;
@@ -903,6 +903,13 @@ body footer .grid-container .contacts .grid-3 i, body footer .grid-container .co
 }
 
 @media screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden !important;
+  }
+  body header {
+    width: 100%;
+    padding-bottom: 10px;
+  }
   body header .title {
     width: 50%;
   }
@@ -911,23 +918,61 @@ body footer .grid-container .contacts .grid-3 i, body footer .grid-container .co
   }
   body header ul {
     left: 0%;
+    display: none;
   }
   body main {
     animation: none;
     background-image: url("../img/livingroom.jpg");
+    height: 100vh;
+    overflow-x: hidden;
   }
   body main .overlay p {
+    width: 80%;
     font-size: 25px;
     text-align: center;
   }
+  body .launches {
+    display: inline-flex;
+    flex-wrap: wrap-reverse;
+  }
   body section {
     height: max-content;
+    padding: 5%;
+  }
+  body section .invest * {
+    text-align: center;
+  }
+  body section .invest * a {
+    width: 80%;
+    margin: auto;
+  }
+  body section .about-container {
+    padding: 5%;
+    text-align: center;
+  }
+  body section .about-container .text-container small {
+    width: 100%;
+  }
+  body section .about-container img {
+    display: none;
   }
   body section .container {
     width: 90%;
   }
   body section .container .img-container {
     width: 100%;
+    text-align: center;
+  }
+  body section .container .img-container a {
+    width: 80%;
+    margin: auto;
+  }
+  body section .container .text-container {
+    text-align: center;
+  }
+  body section .container .text-container a {
+    width: 80%;
+    margin: auto;
   }
   body section .grid-2, body section .grid-2 .properties-container, body section .grid-3, body section footer .grid-container, body footer section .grid-container {
     grid-template-columns: repeat(1, 1fr);
