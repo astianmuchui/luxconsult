@@ -48,7 +48,8 @@ body
         width: 100%;
         height: 100vh;
         
-        background-size: 100%;
+        background-size: cover;
+        background-position: center;
         animation: slideshow 15s ease-in infinite;
     
         @keyframes slideshow
@@ -234,7 +235,151 @@ body
 
     footer
     {
-        height: 60vh;
-        width: 100vh;
+        height: 50vh;
+        width: 100%;
+        @extend .flex-column;
+        box-sizing: border-box;
+        padding: 1%;
+
+        .grid-container
+        {
+            @extend .grid-3;
+            width: 95%;
+            height: 90%;
+
+            * *
+            {
+                margin-bottom: 10px;
+            }
+
+            .links
+            {
+                box-sizing: border-box;
+                padding-top: 10%;
+                padding-left: 5%;
+            }
+
+            .contacts
+            {
+                @extend .flex-column ,.x-start;
+                box-sizing: border-box;
+                padding-top: 10%;
+                padding-left: 5%;
+
+                form
+                {
+                    input
+                    {
+                        height: 35px;
+                        box-sizing: border-box;
+                        padding: 2%;
+                        box-shadow: none;
+                        border-color: transparent;
+                        border-radius: 5px;
+                    }
+                }
+
+                .grid-3
+                {
+                    i
+                    {
+                        @extend .flex-column;
+                        color: $white;
+                        font-size: 13px;
+                        background-color: lighten($primary-color, 10);
+                        width: 40px;
+                        height: 40px;
+                        padding: 10px;
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+
+@media screen and (max-width: 768px)
+{
+    body
+    {
+        header
+        {
+            .title
+            {
+                width: 50%;
+
+                p
+                {
+                    font-size: 15px;
+                }
+            }
+
+            ul
+            {
+                left: 0%;
+            }
+        }
+
+        main
+        {
+            animation: none;
+            background-image: url("../img/livingroom.jpg");
+
+            .overlay
+            {
+                p
+                {
+                    font-size: 25px;
+                    text-align: center;
+                }
+            }
+        }
+
+        section
+        {
+            height: max-content;
+
+            .container
+            {
+                width: 90%;
+                .img-container
+                {
+                    width: 100%;
+                }
+            }
+
+            .grid-2, .grid-3
+            {
+                grid-template-columns: repeat(1, 1fr);
+                width: 100%;
+
+                *
+                {
+                    margin-bottom: 10px;
+
+                    a
+                    {
+                        text-align: center;
+                    }
+                }
+            }
+        }
+
+        footer
+        {
+            height: max-content;
+            padding-top: 5%;
+            .grid-container
+            {
+                .intro
+                {
+                    box-sizing: border-box;
+                    padding-left: 5%;
+                    align-items: flex-start;
+                }
+            }
+        }
     }
 }
