@@ -799,6 +799,7 @@ body section .grid-3 .img-container, body section footer .grid-container .img-co
 }
 body section .grid-3 .img-container img, body section footer .grid-container .img-container img, body footer section .grid-container .img-container img {
   width: 100%;
+  height: 50%;
 }
 body section .grid-3 .img-container p, body section footer .grid-container .img-container p, body footer section .grid-container .img-container p {
   margin: 5% 0;
