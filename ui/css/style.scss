@@ -1,0 +1,234 @@
+@import 'root';
+
+body
+{
+    background-color: $bg;
+
+    header
+    {
+        width: 100%;
+        height: 60px;
+        @extend .shadowed;
+        background: $white;
+
+        .title
+        {
+            height: 90%;
+
+            p
+            {
+                letter-spacing: 5px;
+                text-transform: uppercase;
+            }
+        }
+
+        ul
+        {
+            position: relative;
+            left: 60%;
+            width: 30%;
+            display: inline-flex;
+            justify-content: space-between;
+
+            li a
+            {
+                font-size: 13px;
+                color: lighten($black, 50);
+
+                &:hover
+                {
+                    color: lighten($black, 20);
+                }
+            }
+        }
+    }
+
+    main
+    {
+        width: 100%;
+        height: 100vh;
+        
+        background-size: 100%;
+        animation: slideshow 15s ease-in infinite;
+    
+        @keyframes slideshow
+        {
+            0%
+            {
+                background-image: url("../img/couch.jpg");
+            }
+
+            25%
+            {
+                background-image: url("../img/House1.jpg");
+            }
+            50%
+            {
+                background-image: url("../img/House2.jpg");
+            }
+            75%
+            {
+                background-image: url("../img/outdoor.jpg");
+            }
+            100%
+            {
+                background-image: url("../img/livingroom.jpg");
+            }
+
+        }
+
+        .overlay
+        {
+            z-index: 2;
+            background-color: rgba($black, 0.8);
+            backdrop-filter: blur(5px);
+            width: 100%;
+            height: 100%;
+
+            p
+            {
+                font-size: 35px;
+                text-transform: uppercase;
+                color: $white;
+                margin-bottom: 10px;
+            }
+
+            a
+            {
+                padding: 10px 30px;
+                transition: all 1s cubic-bezier(0.86, 0, 0.07, 1);
+
+            }
+        }
+
+    }
+
+    section
+    {
+        height: 95vh;
+        width: 100%;
+        @extend .flex-column;
+        box-sizing: border-box;
+        padding: 2%;
+
+        .grid-3
+        {
+            width: 95%;
+            height: 95%;
+            box-sizing: border-box;
+            padding: 1%;
+
+            .img-container
+            {
+        
+                @extend .y-start;
+                width: 90%;
+
+                img
+                {
+                    width: 100%;
+                }
+
+                p
+                {
+                    margin: 5% 0;
+                }
+            }
+        }
+
+        .grid-2
+        {
+            width: 95%;
+            height: 95%;
+
+            .text-container
+            {
+                @extend .y-start ,.x-start;
+                box-sizing: border-box;
+                padding-top: 5%;
+
+                h1
+                {
+                    font-weight: 500;
+                    margin-bottom: 5%;
+                }
+
+                small
+                {
+                    width: 95%;
+                    line-height: 25px;
+                    word-spacing: 5px;
+                    letter-spacing: 1px;
+                }
+
+                a
+                {
+                    margin-top: 3%;
+                    
+                }
+            }
+
+            .properties-container
+            {
+                @extend .grid-2;
+                box-sizing: border-box;
+                padding: 0.5%;
+
+                .img-container
+                {
+                    img
+                    {
+                        width: 95%;
+                    }
+
+                    small
+                    {
+                        font-size: 10px;
+                    }
+                }
+            }
+        }
+
+        .about-container
+        {
+            width: 95%;
+            height: 95%;
+            box-sizing: border-box;
+            padding: 7.5% 10%;
+
+            .text-container
+            {
+
+                h1
+                {
+                    font-family: sans-serif;
+                }
+
+                small
+                {
+                    width: 100%;
+                    font-size: 13px;
+                    width: 90%;
+                    margin-bottom: 10px;
+                }
+            }
+            img
+            {
+                width: 130%;
+                @extend .shadowed;
+                position: relative;
+                top: 2%;
+            }
+        }
+
+        .invest
+        {
+            grid-gap: 50px;
+            img
+            {
+                width: 100%;
+                height: 80%;
+            }
+        }
+    }
+}
