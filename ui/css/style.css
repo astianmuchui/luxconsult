@@ -859,3 +859,7 @@ body section .invest img {
   width: 100%;
   height: 80%;
 }
+body footer {
+  height: 60vh;
+  width: 100vh;
+}
